@@ -1,0 +1,15 @@
+6. https://replit.com/@appbrewery/day-1-printing-start ->  Fork repl -> type your program
+7. created an account for Coding Rooms: johnkamperakis@gmail.com - A@sB!)-0M,klAFP
+8. Exercise 1, we can't have the same quotes in a print, print("print('what to print')"). " and ' are identical to the compiler
+but you can't have the same multiple times in a string.
+9. \n = seperator, string1 + string2 = concatenation
+10. Solving Exercise 2
+11. input() function, it returns string values
+12. Exercise 3, len(x) = counts the number of characters in a string
+13. Variables in python
+14. Exercise 4
+15. Variable Naming
+16. Day 1 Project: Band Name Generator
+17. Congratulations!
+18. I'm going to make a program that can calculate things
+19. Primitive data types, 
