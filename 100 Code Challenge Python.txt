@@ -35,3 +35,9 @@ to debug and understand how things work in python
 38. Day 3 Project: Treasure Island, ascii.co, ''' ... ''' multiple lines of string, backslash cancels the binded words
 39. Keep going!!!
 40. 
+41. Random module, import random, random.randint(1, 10)
+42. Day 4 Exercise 1
+43. Lists
+44. Day 4 Exercise 2, split method,
+45. IndexErrors and Nested Lists, 
+46.  
