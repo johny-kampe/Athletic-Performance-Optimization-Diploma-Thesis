@@ -23,4 +23,15 @@ to debug and understand how things work in python
 25. Day 2 Exercise 3
 26. Day 2 Project: Tip Calculator, {:.2f}.format(bill_per_person)
 27. Congratulations! Keep going young man!
-28. 
+29. Control flow with if/else and conditional operators
+30. Day 3 Exercise 1
+31. Nested if statements and elif statements
+32. Day 3 Exercise 2
+33. Day 3 Exercise 3
+34. Multiple If statements in succession
+35. Day 3 Exercise 4
+36. Logical Operators
+37. Day 3 Exercise 5
+38. Day 3 Project: Treasure Island, ascii.co, ''' ... ''' multiple lines of string, backslash cancels the binded words
+39. Keep going!!!
+40. 
