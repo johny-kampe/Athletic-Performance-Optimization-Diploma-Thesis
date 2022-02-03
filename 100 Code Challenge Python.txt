@@ -12,4 +12,15 @@ but you can't have the same multiple times in a string.
 16. Day 1 Project: Band Name Generator
 17. Congratulations!
 18. I'm going to make a program that can calculate things
-19. Primitive data types, 
+19. Primitive data types = string, integer, boolean, float. print("Hello"[0]) -> prints the first character of the string
+20. Type Error, Type Checking, Type Conversion. print(type(num_char)) -> tells us the type of the variable, new_num_char = str(num_char),
+float(123), float("100.70"), str(700+str(100)
+21. Day 2 Exercise 1
+22. Mathematical Operations in Python, PEMDAS (Parenthesis, Exponents, Multiplication, Division, Addition, Subtraction), Thonny is a good tool 
+to debug and understand how things work in python
+23. Day 2 Exercise 2
+24. Number manipulation and F Strings, round(8/3, 2), += /= -=, F Strings -> print(f"{score} {height} {isWinning}")
+25. Day 2 Exercise 3
+26. Day 2 Project: Tip Calculator, {:.2f}.format(bill_per_person)
+27. Congratulations! Keep going young man!
+28. 
