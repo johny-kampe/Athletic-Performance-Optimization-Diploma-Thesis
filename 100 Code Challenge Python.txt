@@ -44,5 +44,11 @@ to debug and understand how things work in python
 47. Day 4 Project: Rock Paper Scissors
 48. Keep coding!
 49. 
-50. Day 5 Exercise 1
-51. 
+50. For loop
+51. Day 5 Exercise 1
+52. Day 5 Exercise 2
+53. for loops and range() function, for number in range(1, 10): 
+54. Day 5 Exercise 3
+55. Day 5 Exercise 4
+56. Day 5 Final Project: Create a Password Generator, password_list.append(random.choice(letters)), random.shuffle(password_list)
+57. 
