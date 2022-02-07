@@ -58,4 +58,7 @@ to debug and understand how things work in python
 61. Indentation in Python, tab vs space
 62. While loops, Exercises
 63. Exercise using While Loop
-64. 
+64. Exercise Variable heights
+65. Escaping the maze
+66. Keep practising 
+67. 
