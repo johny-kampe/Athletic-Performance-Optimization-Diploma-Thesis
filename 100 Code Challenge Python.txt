@@ -51,5 +51,11 @@ to debug and understand how things work in python
 54. Day 5 Exercise 3
 55. Day 5 Exercise 4
 56. Day 5 Final Project: Create a Password Generator, password_list.append(random.choice(letters)), random.shuffle(password_list)
-57. Functions and while loops in this section
-58. Defining Functions and calling them, Reeborg's World Challenge
+57. 
+58. Functions and while loops in this section
+59. Defining Functions and calling them, Reeborg's World Challenge
+60. The Hurdles Loop Challenge, i can write programs it's like an IDE, for n in range(6): jump()
+61. Indentation in Python, tab vs space
+62. While loops, Exercises
+63. Exercise using While Loop
+64. 
