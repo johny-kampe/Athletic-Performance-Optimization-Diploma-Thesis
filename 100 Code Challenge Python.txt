@@ -61,4 +61,18 @@ to debug and understand how things work in python
 64. Exercise Variable heights
 65. Escaping the maze
 66. Keep practising 
-67. 
+67. Hangman project
+68. Flow chart programming
+69. Challenge 1 Pick a random word
+70. Challenge 1 solution
+71. Challenge 2 replacing blanks with guesses
+72. Challenge 2 solution, for _ in chosen_word: -> we use _ when there is no use of a variable
+73. Challenge 3 Checking if the player has won
+74. Challenge 3 solution, if "_" not in display:
+75. Challenge 4 keep track of the player's lives, print(f"{' '.join(display)}")
+76. Challenge 4 solution
+77. Challenge 5 Improving the user experience
+78. Challenge 5 solution
+79. Keep coding daily!
+80. Functions with inputs, Caesar Cipher
+81. 
