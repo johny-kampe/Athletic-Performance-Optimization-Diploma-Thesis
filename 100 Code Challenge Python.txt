@@ -93,4 +93,8 @@ to debug and understand how things work in python
 89. Get motivated by remembering why i do this
 
 90. Dictionaries and nesting, Auction project
-91. 
+91. Dictionary, dict={1:"One"}, dict[2]="Two", for key in dict: print(key) print(dict[key])
+92. Exercise 1
+93. Nesting lists in Dictionaries, travel_log = {"France": {"cities_visited":["Paris", "Lille", "Dijon"], "total_visits": 12}}
+94. Exercise 2, print(order["main"][2][0])
+95.
