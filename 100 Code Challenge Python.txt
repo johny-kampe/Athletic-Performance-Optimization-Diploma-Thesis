@@ -11,6 +11,7 @@ but you can't have the same multiple times in a string.
 15. Variable Naming
 16. Day 1 Project: Band Name Generator
 17. Congratulations!
+
 18. I'm going to make a program that can calculate things
 19. Primitive data types = string, integer, boolean, float. print("Hello"[0]) -> prints the first character of the string
 20. Type Error, Type Checking, Type Conversion. print(type(num_char)) -> tells us the type of the variable, new_num_char = str(num_char),
@@ -23,6 +24,7 @@ to debug and understand how things work in python
 25. Day 2 Exercise 3
 26. Day 2 Project: Tip Calculator, {:.2f}.format(bill_per_person)
 27. Congratulations! Keep going young man!
+
 29. Control flow with if/else and conditional operators
 30. Day 3 Exercise 1
 31. Nested if statements and elif statements
@@ -34,6 +36,7 @@ to debug and understand how things work in python
 37. Day 3 Exercise 5
 38. Day 3 Project: Treasure Island, ascii.co, ''' ... ''' multiple lines of string, backslash cancels the binded words
 39. Keep going!!!
+
 40. 
 41. Random module, import random, random.randint(1, 10)
 42. Day 4 Exercise 1
@@ -43,6 +46,7 @@ to debug and understand how things work in python
 46. Day 4 Exercise 3
 47. Day 4 Project: Rock Paper Scissors
 48. Keep coding!
+
 49. 
 50. For loop
 51. Day 5 Exercise 1
@@ -51,6 +55,7 @@ to debug and understand how things work in python
 54. Day 5 Exercise 3
 55. Day 5 Exercise 4
 56. Day 5 Final Project: Create a Password Generator, password_list.append(random.choice(letters)), random.shuffle(password_list)
+
 57. 
 58. Functions and while loops in this section
 59. Defining Functions and calling them, Reeborg's World Challenge
@@ -61,6 +66,7 @@ to debug and understand how things work in python
 64. Exercise Variable heights
 65. Escaping the maze
 66. Keep practising 
+
 67. Hangman project
 68. Flow chart programming
 69. Challenge 1 Pick a random word
@@ -74,5 +80,17 @@ to debug and understand how things work in python
 77. Challenge 5 Improving the user experience
 78. Challenge 5 solution
 79. Keep coding daily!
+
 80. Functions with inputs, Caesar Cipher
-81. 
+81. Functions and inputs
+82. Positional vs keyword arguments, greet_with("Nowhere", "John Mayeur") Positional arg or greet_with(name = "John Mayuer", location = "London") keyword arg
+83. Exercise 1, Paint Area Calculator
+84. Exercise 2, Prime Number
+85. Exercise 3, Caesar Encrypting Algorithm, index() function
+86. Exercise 4, Decryption
+87. Exercise 5, Reorganising our Code
+88. Exercise 6, UI improvements
+89. Get motivated by remembering why i do this
+
+90. Dictionaries and nesting, Auction project
+91. 
