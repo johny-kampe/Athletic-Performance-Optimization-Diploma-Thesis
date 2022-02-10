@@ -102,4 +102,6 @@ to debug and understand how things work in python
 97. 
 
 98. Functions with outputs, Project Calculator
-99. 
+99. Function with outputs, return result, convert f name and l name to title case, return f"{name} {lname}"
+100. Multiple return values
+101. 
