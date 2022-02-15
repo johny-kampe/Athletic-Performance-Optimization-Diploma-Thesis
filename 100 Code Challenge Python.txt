@@ -114,8 +114,7 @@ insert a docstring """Take a firsst and last name and format it"""
 107. 
 
 108. The Blackjack Capstone Project
-109. from replit import clear,
-
+109. from replit import clear, 
 ############### Blackjack Project #####################
 from art import logo
 import random as rand
@@ -126,35 +125,57 @@ from replit import clear
 #Difficulty Expert 🤯: Only use Hint 1 to complete the project.
 
 ############### Our Blackjack House Rules #####################
+def draw():
+  res_list = []
+  player = ""
+  player_sum = 0
+
+  card = rand.randint(1, 13)
+  if card == 11:
+    player = 'J'
+    player_sum = 10
+  elif card == 12:
+    player = 'Q'
+    player_sum = 10
+  elif card == 13:
+    player = 'K'
+    player_sum= 10
+  else:
+    player = card
+    player_sum = card
+
+  res_list.append(player)
+  res_list.append(player_sum)
+
+  return res_list
+
 def play_round():
   clear()
   print(logo)
 
   ace = [1, 11]
   symbols_numbers = {}
+  results = []
 
   player1_sum = 0
   player1_cards = []
   computer_sum = 0
   computer_cards = []
 
-  for n in range(2):
-      card = rand.randint(1, 13)
-      if card == 11:
-        player1_cards.append('J')
-        player1_sum += 10
-      elif card == 12:
-        player1_cards.append('Q')
-        player1_sum += 10
-      elif card == 13:
-        player1_cards.append('K')
-        player1_sum += 10
-      else:
-        player1_cards.append(str(card))
-        player1_sum += card
+  results = draw()
+  player1_cards.append(results[0])
+  player1_sum += results[1]
+
+  results = draw()
+  computer_cards.append(results[0])
+  computer_sum += results[1]
 
   end_game = True
   while end_game:
+    results = draw()
+    player1_cards.append(results[0])
+    player1_sum += results[1]
+
     print(f"Your cards: {player1_cards}, current score: {player1_sum}")
     print(f"Computer's first card: {computer_cards}")
     choice = input("Type 'y' to get another card, type 'n' to pass: ")
