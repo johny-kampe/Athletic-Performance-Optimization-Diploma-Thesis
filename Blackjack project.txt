@@ -1,0 +1,121 @@
+def draw():
+  res_list = []
+  player = ""
+  player_sum = 0
+
+  card = rand.randint(1, 13)
+  if card == 11:
+    player = 'J'
+    player_sum = 10
+  elif card == 12:
+    player = 'Q'
+    player_sum = 10
+  elif card == 13:
+    player = 'K'
+    player_sum = 10
+  elif card == 1:
+    player = 1
+    player_sum = 11
+  else:
+    player = card
+    player_sum = card
+
+  res_list.append(player)
+  res_list.append(player_sum)
+
+  return res_list
+
+def computer_play(computer_cards, computer_sum):
+    results = []
+    results.append(computer_cards)
+    results.append(computer_sum)
+
+    draw_results = []
+    
+    end_game = True
+    while end_game:
+        draw_results = draw()
+        results[0].append(draw_results[0])
+        results[1] += draw_results[1]
+
+        if results[1] > 14:
+            end_game = False
+    return results
+
+def compare(user_score, computer_score):
+  #Bug fix. If you and the computer are both over, you lose.
+  if user_score > 21 and computer_score > 21:
+    return "You went over. You lose 😤"
+
+
+  if user_score == computer_score:
+    return "Draw 🙃"
+  elif computer_score == 0:
+    return "Lose, opponent has Blackjack 😱"
+  elif user_score == 0:
+    return "Win with a Blackjack 😎"
+  elif user_score > 21:
+    return "You went over. You lose 😭"
+  elif computer_score > 21:
+    return "Opponent went over. You win 😁"
+  elif user_score > computer_score:
+    return "You win 😃"
+  else:
+    return "You lose 😤"
+
+def play_round():
+  clear()
+  print(logo)
+
+  player1_sum = 0
+  player1_cards = []
+  computer_sum = 0
+  computer_cards = []
+  
+  results = draw()
+  player1_cards.append(results[0])
+  player1_sum += results[1]
+  
+
+  results = draw()
+  computer_cards.append(results[0])
+  computer_sum += results[1]
+
+  flag = 0
+  end_game = True
+  while end_game:
+    results = draw()
+    player1_cards.append(results[0])
+    
+    if 1 in player1_cards and results[0] == 1:
+      player1_sum += 1
+    elif 1 in player1_cards and player1_sum + results[1] > 21 and flag == 0:
+        player1_sum = player1_sum - 11 + 1
+        flag = 1
+    else:
+      player1_sum += results[1]
+
+    print(f"\tYour cards: {player1_cards}, current score: {player1_sum}")
+    print(f"\tComputer's first card: {computer_cards}")
+
+    if player1_sum >= 21:
+      computer_results = computer_play(computer_cards, computer_sum)
+      end_game = False    
+    elif input("Type 'y' to get another card, type 'n' to pass: ") == 'n':
+      computer_results = computer_play(computer_cards, computer_sum)
+      end_game = False     
+
+  print(f"Your final hand: {player1_cards}, final score: {player1_sum}")
+  print(f"Computer's final hand: {computer_results[0]}, final score: {computer_results[1]}")
+
+  print(compare(player1_sum, computer_results[1]))
+  
+end_game = True
+while end_game:
+  enter_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+
+  if enter_game == 'y':
+    play_round()
+  elif enter_game == 'n':
+    print("Your money is safe...FOR NOW!")
+    end_game = False
