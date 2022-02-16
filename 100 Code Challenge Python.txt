@@ -149,26 +149,41 @@ def draw():
 
   return res_list
 
+def computer_play(computer_cards, computer_sum):
+    results = []
+    results.append(computer_cards)
+    results.append(computer_sum)
+
+    draw_results = []
+    
+    end_game = True
+    while end_game:
+        draw_results = draw()
+        results[0].append(draw_results[0])
+        results[1] += draw_results[1]
+
+        if results[1] > 14:
+            end_game = False
+    return results
+
+def compare(list1, list2):
+    print("")
+
 def play_round():
   clear()
   print(logo)
 
   ace = [1, 11]
-  symbols_numbers = {}
-  results = []
 
   player1_sum = 0
   player1_cards = []
   computer_sum = 0
   computer_cards = []
 
-  results = draw()
-  player1_cards.append(results[0])
-  player1_sum += results[1]
-
-  results = draw()
-  computer_cards.append(results[0])
-  computer_sum += results[1]
+  for _ in range(2):
+    results = draw()
+    player1_cards.append(results[0])
+    player1_sum += results[1]
 
   end_game = True
   while end_game:
@@ -179,6 +194,10 @@ def play_round():
     print(f"Your cards: {player1_cards}, current score: {player1_sum}")
     print(f"Computer's first card: {computer_cards}")
     choice = input("Type 'y' to get another card, type 'n' to pass: ")
+
+    if choice == 'n':
+        computer_play(computer_cards, computer_sum)
+        end_game = False
 
   print(f"Your final hand: {player1_cards}, final score: {player1_sum}")
   print(f"Computer's final hand: {computer_cards}, final score: {computer_sum}")
