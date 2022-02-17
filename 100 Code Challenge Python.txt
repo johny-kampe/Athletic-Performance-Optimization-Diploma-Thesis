@@ -122,4 +122,9 @@ insert a docstring """Take a firsst and last name and format it"""
 114.
 115. Keep going!! (Blackjack project.txt)
 
-116. 
+116. Local vs Global scope
+117. Block scope, if game_level < 5: new_enemy = enemies[0]
+118. Modify a global variable, enemies = 1 def inc_enem(): global enemies print(..)
+119. Constants and global scope, every letter is uppercased
+     QUIZ
+120. 
