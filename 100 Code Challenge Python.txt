@@ -127,4 +127,8 @@ insert a docstring """Take a firsst and last name and format it"""
 118. Modify a global variable, enemies = 1 def inc_enem(): global enemies print(..)
 119. Constants and global scope, every letter is uppercased
      QUIZ
-120. 
+120. Project: The Number Guessing Game, https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+121. Project solution
+122. Don't be dissaponted, keep going
+
+123. 
