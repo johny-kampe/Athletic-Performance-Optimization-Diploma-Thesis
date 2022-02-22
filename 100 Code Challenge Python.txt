@@ -131,4 +131,14 @@ insert a docstring """Take a firsst and last name and format it"""
 121. Project solution
 122. Don't be dissaponted, keep going
 
-123. 
+123. Describe the problem 
+124. Reproduce the bug
+125. Play computer and evaluate each line
+126. Fixing errors and watching for red underlines
+127. Squash bugs with a print() statement
+128. Bringin out the big gun: using a debugger
+129. Final debugging tips
+130. Build confidence by keep coding daily!
+
+131. Higher Lower Game Project
+132. 
