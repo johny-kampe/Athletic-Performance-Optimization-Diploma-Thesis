@@ -139,6 +139,17 @@ insert a docstring """Take a firsst and last name and format it"""
 128. Bringin out the big gun: using a debugger
 129. Final debugging tips
 130. Build confidence by keep coding daily!
+131. Debugging Leap Year
+132. Debugging FizzBuzz
+133. 
 
-131. Higher Lower Game Project
-132. 
+134. Higher Lower Game Project
+135. Solution of Higher Lower Game Project
+136. 
+
+137. Install latest Python version
+138. Download PyCharm
+139. Pycharm's features
+140. How to install PyCharm on Windows
+141. Install PyCharm on Mac
+142. 
