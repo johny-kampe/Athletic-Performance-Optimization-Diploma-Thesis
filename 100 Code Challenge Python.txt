@@ -152,4 +152,9 @@ insert a docstring """Take a firsst and last name and format it"""
 139. Pycharm's features
 140. How to install PyCharm on Windows
 141. Install PyCharm on Mac
-142. 
+142. Coffee Machine Project
+143. Solution
+144. 
+
+145. OOP
+146. 
