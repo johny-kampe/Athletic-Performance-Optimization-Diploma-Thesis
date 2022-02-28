@@ -157,4 +157,11 @@ insert a docstring """Take a firsst and last name and format it"""
 144. 
 
 145. OOP
-146. 
+146. How to use OOP
+147. Constructin objects and accessing their attributes and methods
+148. Add python packages and use PyPi
+149. Modifying object attributes
+     QUIZ
+150. OOP Coffee Machine Project
+151. 
+152. Review occasionally
