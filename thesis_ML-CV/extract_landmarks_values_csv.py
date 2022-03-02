@@ -8,7 +8,7 @@ pose = mpPose.Pose()
 mpDraw = mp.solutions.drawing_utils
 
 
-def get_landmarks_pixel_values_excel(sheet_set_csv, set_csv, folder):
+def get_landmarks_pixel_values_excel(sheet_set_csv, set_csv, folder, name_csv):
     ''' This function is getting every video from a folder, then it makes the detection
     and then the pixel values are stored in a specific .csv file '''
 
@@ -51,7 +51,7 @@ def get_landmarks_pixel_values_excel(sheet_set_csv, set_csv, folder):
                         sheet_set_csv.write(rows16 + 1, 5, cy)
                         rows16 += 1
                     # print(id, cx, cy)
-                    set_csv.save('athletic_performance_optimization_PERFECT_SET.xls')
+                    set_csv.save(name_csv)
 
             img = cv2.resize(img, (960, 540))  # resize at the display window, not at the input video (!)
             cv2.imshow("Pose Detection Result", img)
@@ -92,7 +92,10 @@ training_set_folder = "D:/Diploma-Thesis/thesis_ML-CV/training_set/"
 test_set_A_folder = "D:/Diploma-Thesis/thesis_ML-CV/test_set_A/"
 test_set_B_folder = "D:/Diploma-Thesis/thesis_ML-CV/test_set_B/"
 
+name_training = "training_set.xls"
+name_test_A = "test_set_A.xls"
+name_test_B = "test_set_B.xls"
 
-get_landmarks_pixel_values_excel(sheet_training_set, training_set_csv, training_set_folder)
-# get_landmarks_pixel_values_excel(sheet_test_set_A, test_set_A_csv, test_set_A_folder)
-# get_landmarks_pixel_values_excel(sheet_test_set_B, test_set_B_csv, test_set_B_folder)
+get_landmarks_pixel_values_excel(sheet_training_set, training_set_csv, training_set_folder, name_training)
+# get_landmarks_pixel_values_excel(sheet_test_set_A, test_set_A_csv, test_set_A_folder, name_test_A)
+# get_landmarks_pixel_values_excel(sheet_test_set_B, test_set_B_csv, test_set_B_folder, name_test_B)
