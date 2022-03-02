@@ -38,15 +38,15 @@ def get_landmarks_pixel_values_excel(sheet_set_csv, set_csv, folder, name_csv):
                     cx, cy = int(lm.x * w), int(lm.y * h)  # convert normalized values to real pixel values
                     cv2.circle(img, (cx, cy), 6, (0, 0, 255), cv2.FILLED)  # print a red filled circle on the detected joint
 
-                    if id == 12:  # right shoulder -> insert it at the right column and row in the excl
+                    if id == 12:  # right shoulder -> insert it at the right column and row in the .csv
                         sheet_set_csv.write(rows12 + 1, 0, cx)
                         sheet_set_csv.write(rows12 + 1, 1, cy)
                         rows12 += 1
-                    elif id == 14:  # right elbow -> insert it at the right column and row in the excl
+                    elif id == 14:  # right elbow -> insert it at the right column and row in the .csv
                         sheet_set_csv.write(rows14 + 1, 2, cx)
                         sheet_set_csv.write(rows14 + 1, 3, cy)
                         rows14 += 1
-                    elif id == 16:  # right wrist -> insert it at the right column and row in the excl
+                    elif id == 16:  # right wrist -> insert it at the right column and row in the .csv
                         sheet_set_csv.write(rows16 + 1, 4, cx)
                         sheet_set_csv.write(rows16 + 1, 5, cy)
                         rows16 += 1
@@ -58,31 +58,31 @@ def get_landmarks_pixel_values_excel(sheet_set_csv, set_csv, folder, name_csv):
             cv2.waitKey(1)
 
 
-style = xlwt.easyxf('font: bold 1')  # Specifying style for the excel files
+style = xlwt.easyxf('font: bold 1')  # Specifying style for the .csv files
 training_set_csv = xlwt.Workbook()  # Workbook for training set
 test_set_A_csv = xlwt.Workbook()  # Workbook for test set of athlete A
 test_set_B_csv = xlwt.Workbook()  # Workbook for test set of athlete B
 
-sheet_training_set = training_set_csv.add_sheet('Sheet 1')  # add_sheet is used to create sheet in excel
+sheet_training_set = training_set_csv.add_sheet('Sheet 1')  # add_sheet is used to create sheet in .csv
 sheet_test_set_A = test_set_A_csv.add_sheet('Sheet 1')
 sheet_test_set_B = test_set_B_csv.add_sheet('Sheet 1')
 
-sheet_training_set.write(0, 0, 'Right shoulder x', style)  # adding names to the columns of training_set.csv to recognize
-sheet_training_set.write(0, 1, 'Right shoulder y', style)  # the data that we have
+sheet_training_set.write(0, 0, 'Right shoulder x', style)  # adding names to the columns of training_set_csv
+sheet_training_set.write(0, 1, 'Right shoulder y', style)  # to recognize the data that we have
 sheet_training_set.write(0, 2, 'Right elbow x', style)
 sheet_training_set.write(0, 3, 'Right elbow y', style)
 sheet_training_set.write(0, 4, 'Right wrist x', style)
 sheet_training_set.write(0, 5, 'Right wrist y', style)
 
-sheet_test_set_A.write(0, 0, 'Right shoulder x', style)  # adding names to the columns of test_set_A.csv to recognize
-sheet_test_set_A.write(0, 1, 'Right shoulder y', style)  # the data that we have
+sheet_test_set_A.write(0, 0, 'Right shoulder x', style)  # adding names to the columns of test_set_A_csv
+sheet_test_set_A.write(0, 1, 'Right shoulder y', style)  # to recognize the data that we have
 sheet_test_set_A.write(0, 2, 'Right elbow x', style)
 sheet_test_set_A.write(0, 3, 'Right elbow y', style)
 sheet_test_set_A.write(0, 4, 'Right wrist x', style)
 sheet_test_set_A.write(0, 5, 'Right wrist y', style)
 
-sheet_test_set_B.write(0, 0, 'Right shoulder x', style)  # adding names to the columns of test_set_B.csv to recognize
-sheet_test_set_B.write(0, 1, 'Right shoulder y', style)  # the data that we have
+sheet_test_set_B.write(0, 0, 'Right shoulder x', style)  # adding names to the columns of test_set_B_csv
+sheet_test_set_B.write(0, 1, 'Right shoulder y', style)  # to recognize the data that we have
 sheet_test_set_B.write(0, 2, 'Right elbow x', style)
 sheet_test_set_B.write(0, 3, 'Right elbow y', style)
 sheet_test_set_B.write(0, 4, 'Right wrist x', style)
@@ -92,10 +92,10 @@ training_set_folder = "D:/Diploma-Thesis/thesis_ML-CV/training_set/"
 test_set_A_folder = "D:/Diploma-Thesis/thesis_ML-CV/test_set_A/"
 test_set_B_folder = "D:/Diploma-Thesis/thesis_ML-CV/test_set_B/"
 
-name_training = "training_set.xls"
-name_test_A = "test_set_A.xls"
-name_test_B = "test_set_B.xls"
+csv_name_training = "training_set.xls"
+csv_name_test_A = "test_set_A.xls"
+csv_name_test_B = "test_set_B.xls"
 
-get_landmarks_pixel_values_excel(sheet_training_set, training_set_csv, training_set_folder, name_training)
-# get_landmarks_pixel_values_excel(sheet_test_set_A, test_set_A_csv, test_set_A_folder, name_test_A)
-# get_landmarks_pixel_values_excel(sheet_test_set_B, test_set_B_csv, test_set_B_folder, name_test_B)
+get_landmarks_pixel_values_excel(sheet_training_set, training_set_csv, training_set_folder, csv_name_training)
+# get_landmarks_pixel_values_excel(sheet_test_set_A, test_set_A_csv, test_set_A_folder, csv_name_test_A)
+# get_landmarks_pixel_values_excel(sheet_test_set_B, test_set_B_csv, test_set_B_folder, csv_name_test_B)
