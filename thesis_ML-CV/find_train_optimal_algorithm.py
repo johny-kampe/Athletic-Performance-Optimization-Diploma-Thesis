@@ -15,11 +15,12 @@ import numpy as np
 
 
 names = ['Right shoulder x', 'Right shoulder y', 'Right elbow x', 'Right elbow y', 'Right wrist x', 'Right wrist y']
-# # Load dataset
+# # # Load dataset
 dataset = pd.read_excel('second_Test.xls', names=names)
-
+#
 # X = dataset.drop(columns=['Random'])  # getting right shoulder's coordinates (x, y)
-X = dataset['Right shoulder x']
+X = dataset[:,2]
+print(X)
 y = dataset['Right elbow x']  # getting right elbow's coordinates (x, y)
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
@@ -38,6 +39,15 @@ y = dataset['Right elbow x']  # getting right elbow's coordinates (x, y)
 # score = accuracy_score(y_test, predictions)
 # print(score)
 
-array_vec_1 = np.array([X])
-array_vec_2 = np.array([y])
-print(cosine_similarity(array_vec_1, array_vec_2))
+# array_vec_1 = np.array([dataset])
+# array_vec_2 = np.array([y])
+
+
+import numpy as np
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+
+a = np.array([10, 5, 15, 7, 5])
+b = np.array([5, 10, 17, 5, 3])
+cosine = cosine_similarity(a.reshape(1, -1), b.reshape(1, -1))
+print(cosine)

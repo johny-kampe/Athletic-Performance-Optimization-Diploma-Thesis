@@ -139,6 +139,6 @@ xls_name_training = "dataset.xls"
 xls_name_test_A = "real_world_set_A.xls"
 xls_name_test_B = "real_world_set_B.xls"
 
-multiple_videos_find_landmarks_human_pose_estimation(sheet_dataset, dataset_xls, training_set_folder, xls_name_training)
-# single_video_find_landmarks_human_pose_estimation(sheet_real_world_set_A,     real_world_set_A_xls, test_set_A_folder, xls_name_test_A)
+# multiple_videos_find_landmarks_human_pose_estimation(sheet_dataset, dataset_xls, training_set_folder, xls_name_training)
+single_video_find_landmarks_human_pose_estimation(sheet_real_world_set_A, real_world_set_A_xls, test_set_A_folder, xls_name_test_A)
 # single_video_find_landmarks_human_pose_estimation(sheet_real_world_set_B, real_world_set_B_xls, test_set_B_folder, xls_name_test_B)
