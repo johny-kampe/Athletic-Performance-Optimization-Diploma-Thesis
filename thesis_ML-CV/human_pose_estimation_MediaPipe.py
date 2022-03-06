@@ -3,14 +3,14 @@ import xlwt
 import cv2
 import os
 
-
 mpPose = mp.solutions.pose
 pose = mpPose.Pose()
 mpDraw = mp.solutions.drawing_utils
 
+
 def single_video_find_landmarks_human_pose_estimation(sheet_set_csv, set_csv, folder, name_csv):
-    ''' This function is getting a single video from a specific folder and then it detects the human pose.
-        Then the pixel values are stored in a specific .csv file '''
+    """ This function is getting a single video from a specific folder and then it detects the human pose.
+        Then the pixel values are stored in a specific .csv file """
 
     print('Detecting and extracting landmarks values..\n.\n.\n.')
     rows12 = 0
@@ -33,8 +33,7 @@ def single_video_find_landmarks_human_pose_estimation(sheet_set_csv, set_csv, fo
             for id, lm in enumerate(results.pose_landmarks.landmark):
                 h, w, c = img.shape  # get image's width, height and channel
                 cx, cy = int(lm.x * w), int(lm.y * h)  # convert normalized values to real pixel values
-                cv2.circle(img, (cx, cy), 6, (0, 0, 255),
-                           cv2.FILLED)  # print a red filled circle on the detected joint
+                cv2.circle(img, (cx, cy), 6, (0, 0, 255), cv2.FILLED)  # print a red filled circle on the detected joint
 
                 if id == 12:  # right shoulder -> insert it at the right column and row in the .csv
                     sheet_set_csv.write(rows12 + 1, 0, cx)
@@ -54,9 +53,10 @@ def single_video_find_landmarks_human_pose_estimation(sheet_set_csv, set_csv, fo
         cv2.imshow("Pose Detection Result", img)
         cv2.waitKey(1)
 
+
 def multiple_videos_find_landmarks_human_pose_estimation(sheet_set_csv, set_csv, folder, name_csv):
-    ''' This function is getting every video from a folder, then it detects the human pose
-    and finally the pixel values of right wrist, elbow and shoulder are stored in a specific .csv file '''
+    """ This function is getting every video from a folder, then it detects the human pose
+    and finally the pixel values of right wrist, elbow and shoulder are stored in a specific .csv file """
 
     print('Detecting and extracting landmarks values..\n.\n.\n.')
     rows12 = 0
@@ -64,7 +64,7 @@ def multiple_videos_find_landmarks_human_pose_estimation(sheet_set_csv, set_csv,
     rows16 = 0
 
     for filename in os.listdir(folder):
-        cap = cv2.VideoCapture(folder+filename)
+        cap = cv2.VideoCapture(folder + filename)
         print(f"Video's path: {folder + filename}")
         while True:
             success, img = cap.read()
@@ -79,7 +79,8 @@ def multiple_videos_find_landmarks_human_pose_estimation(sheet_set_csv, set_csv,
                 for id, lm in enumerate(results.pose_landmarks.landmark):
                     h, w, c = img.shape  # get image's width, height and channel
                     cx, cy = int(lm.x * w), int(lm.y * h)  # convert normalized values to real pixel values
-                    cv2.circle(img, (cx, cy), 6, (0, 0, 255), cv2.FILLED)  # print a red filled circle on the detected joint
+                    cv2.circle(img, (cx, cy), 6, (0, 0, 255),
+                               cv2.FILLED)  # print a red filled circle on the detected joint
 
                     if id == 12:  # right shoulder -> insert it at the right column and row in the .csv
                         sheet_set_csv.write(rows12 + 1, 0, cx)
@@ -139,6 +140,7 @@ xls_name_training = "dataset.xls"
 xls_name_test_A = "real_world_set_A.xls"
 xls_name_test_B = "real_world_set_B.xls"
 
-# multiple_videos_find_landmarks_human_pose_estimation(sheet_dataset, dataset_xls, training_set_folder, xls_name_training)
+multiple_videos_find_landmarks_human_pose_estimation(sheet_dataset, dataset_xls, training_set_folder, xls_name_training)
+
 single_video_find_landmarks_human_pose_estimation(sheet_real_world_set_A, real_world_set_A_xls, test_set_A_folder, xls_name_test_A)
-# single_video_find_landmarks_human_pose_estimation(sheet_real_world_set_B, real_world_set_B_xls, test_set_B_folder, xls_name_test_B)
+single_video_find_landmarks_human_pose_estimation(sheet_real_world_set_B, real_world_set_B_xls, test_set_B_folder, xls_name_test_B)
