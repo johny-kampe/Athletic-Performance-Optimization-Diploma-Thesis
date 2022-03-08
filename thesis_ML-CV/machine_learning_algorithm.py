@@ -7,6 +7,7 @@ from sklearn.metrics import silhouette_score
 from sklearn.metrics.pairwise import cosine_similarity
 from numpy import dot
 from numpy.linalg import norm
+from math import sqrt
 
 
 def calculate_similarity(dataset_correct, dataset_A):
@@ -87,6 +88,7 @@ def calculate_similarity(dataset_correct, dataset_A):
             # shouldery_list_res.append(cosine_similarity(array_vec_1, array_vec_2) * 100)
             result = 1 - spatial.distance.cosine(shouldery_list, Alist)
             print(f"Result: {result}")
+            cos_sim(shoulderx_list, Alist)
             shouldery_list = []
 
     #
@@ -148,6 +150,7 @@ def calculate_similarity(dataset_correct, dataset_A):
 
 
 def elbow_function_silhouette_score(dataset):
+    #  calculate the number of clusters with elbow function
     wss = []
     for i in range(1, 10):
         kmeans = KMeans(n_clusters=i, init='k-means++', random_state=1)
@@ -212,7 +215,6 @@ def find_clusters(dataset):
     plt.scatter(df1["Right shoulder x"], df1["Right shoulder y"], color='green')
     plt.scatter(df2["Right shoulder x"], df2["Right shoulder y"], color='red')
     plt.scatter(df3["Right shoulder x"], df3["Right shoulder y"], color='black')
-    plt.scatter(km.cluster_centers_[:, 0], km.cluster_centers_[:, 1], color='purple', marker='*', label='centroid')
     plt.xlabel('x')
     plt.ylabel('y')
     plt.legend()
@@ -224,10 +226,9 @@ def kmeans_clustering_visualization(datasetB):
     to_plot_elbowB = pd.concat([datasetB[["Right elbow x", "Right elbow y"]]], join='outer', axis=1)
     to_plot_wristB = pd.concat([datasetB[["Right wrist x", "Right wrist y"]]], join='outer', axis=1)
 
-    to_plot_shoulderC = pd.concat([datasetB[["Right shoulder x", "Right shoulder y"]]], join='outer', axis=1)
-    to_plot_elbowC = pd.concat([datasetB[["Right elbow x", "Right elbow y"]]], join='outer', axis=1)
-    to_plot_wristC = pd.concat([datasetB[["Right wrist x", "Right wrist y"]]], join='outer', axis=1)
-
+    # to_plot_shoulderC = pd.concat([datasetB[["Right shoulder x", "Right shoulder y"]]], join='outer', axis=1)
+    # to_plot_elbowC = pd.concat([datasetB[["Right elbow x", "Right elbow y"]]], join='outer', axis=1)
+    # to_plot_wristC = pd.concat([datasetB[["Right wrist x", "Right wrist y"]]], join='outer', axis=1)
 
     show_plots(datasetB)
 
@@ -236,12 +237,14 @@ def kmeans_clustering_visualization(datasetB):
     elbow_function_silhouette_score(to_plot_wristB)
 
     find_clusters(to_plot_shoulderB)
+    # find_clusters(to_plot_elbowB)
+    # find_clusters(to_plot_wristB)
 
 
 datasetA = pd.read_excel('dataset.xls')
 datasetB = pd.read_excel('real_world_set_A.xls')
 datasetC = pd.read_excel('real_world_set_B.xls')
 
-calculate_similarity(datasetA, datasetB)
+# calculate_similarity(datasetA, datasetB)
 
-# kmeans_clustering_visualization(datasetB)
+kmeans_clustering_visualization(datasetB)
