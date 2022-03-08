@@ -14,14 +14,14 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
 
-names = ['Right shoulder x', 'Right shoulder y', 'Right elbow x', 'Right elbow y', 'Right wrist x', 'Right wrist y']
+# names = ['Right shoulder x', 'Right shoulder y', 'Right elbow x', 'Right elbow y', 'Right wrist x', 'Right wrist y']
 # # # Load dataset
-dataset = pd.read_excel('second_Test.xls', names=names)
+# dataset = pd.read_excel('second_Test.xls', names=names)
 #
 # X = dataset.drop(columns=['Random'])  # getting right shoulder's coordinates (x, y)
-X = dataset[:,2]
-print(X)
-y = dataset['Right elbow x']  # getting right elbow's coordinates (x, y)
+# X = dataset[:,2]
+# print(X)
+# y = dataset['Right elbow x']  # getting right elbow's coordinates (x, y)
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
 # model = LinearRegression()  # %
@@ -51,3 +51,28 @@ a = np.array([10, 5, 15, 7, 5])
 b = np.array([5, 10, 17, 5, 3])
 cosine = cosine_similarity(a.reshape(1, -1), b.reshape(1, -1))
 print(cosine)
+
+from matplotlib import pyplot as plt
+
+df = pd.read_excel("real_world_set_A.xls")
+x1 = df['Right shoulder x']
+y1 = df['Right shoulder y']
+
+# plotting the line 1 points
+plt.plot(x1, y1, label = "line 1")
+
+df = pd.read_excel("real_world_set_B.xls")
+x2 = df['Right shoulder x']
+y2 = df['Right shoulder y']
+# plotting the line 2 points
+plt.plot(x2, y2, label = "line 2")
+
+plt.xlabel('x - axis')
+# naming the y axis
+plt.ylabel('y - axis')
+# giving a title to my graph
+plt.title('Two lines on same graph!')
+plt.scatter(x1, y1, "stars", color= "green",
+            marker= "*")
+plt.legend()
+plt.show()
